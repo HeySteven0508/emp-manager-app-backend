@@ -1,4 +1,4 @@
-package model;
+package com.ulaps.employeemanager.model;
 
 import lombok.Data;
 
