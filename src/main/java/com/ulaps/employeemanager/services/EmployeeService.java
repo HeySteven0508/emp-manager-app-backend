@@ -1,5 +1,6 @@
 package com.ulaps.employeemanager.services;
 
+import com.ulaps.employeemanager.exceptions.UserNotFoundException;
 import com.ulaps.employeemanager.model.Employee;
 import com.ulaps.employeemanager.repositories.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
