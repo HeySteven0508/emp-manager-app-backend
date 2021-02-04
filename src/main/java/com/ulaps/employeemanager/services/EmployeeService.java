@@ -21,7 +21,7 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(Employee employee){
-        employee.setEmployeeCode(UUID.rangitdomUUID().toString());
+        employee.setEmployeeCode(UUID.randomUUID().toString());
         return employeeRepo.save(employee);
     }
 
