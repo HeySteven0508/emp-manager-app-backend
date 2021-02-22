@@ -126,6 +126,11 @@ public class ClockifyService {
         String idArr[] = stringArr[0].split("="); // id
         String nameArr[] = stringArr[1].split("="); // name
         String durArr[] = stringArr[2].split("="); // duration
-        return new SummaryReportDTO(idArr[1],nameArr[1],Long.parseLong(durArr[1]));
+        return new SummaryReportDTO(idArr[1],nameArr[1],convertSecondsToHours(Long.parseLong(durArr[1])));
+    }
+
+    public long convertSecondsToHours(long secs){
+
+        return (secs/60)/60;
     }
 }

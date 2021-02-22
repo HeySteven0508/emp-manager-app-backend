@@ -19,8 +19,7 @@ import java.util.List;
 public class EmployeeResource {
 
     private final EmployeeService employeeService;
-    private static final String url = "https://api.clockify.me/api/v1/workspaces/5fa766a5d7e28b6cc64c7d93/users";
-    private static final String url2= "https://reports.api.clockify.me/v1/workspaces/5fa766a5d7e28b6cc64c7d93/reports/summary";
+
 
     @Autowired
     public EmployeeResource(EmployeeService employeeService) {
@@ -56,19 +55,6 @@ public class EmployeeResource {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-    @GetMapping("/clockify/users")
-    public String showMyTime() throws IOException, InterruptedException {
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .header("X-Api-Key", "YBfeD6hLYRNKtDmO")
-                .uri(URI.create(url))
-                .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        return response.body();
-    }
-
 
 
 
